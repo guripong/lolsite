@@ -6,3 +6,21 @@ body {
 a {
   color: #00B7FF;
 }
+
+.lol_id_box{
+  display: block;
+  width: 50%; /* 너비 */
+  padding: 15px 15px 18px 17px;
+  background: none;
+  border: none;
+  line-height: 17px;
+  font-size: 14px;
+  color: #9b9b9b;
+  box-sizing: border-box;
+  outline: none;/* 클릭할때 뜨는박스 없애는거*/
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.lol_id_box_wrapper{
+  text-align:center;
+}

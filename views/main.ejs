@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src='/javascripts/jquery.3.1.min.js'></script>
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p>
+
+
+
+  <div class='lol_id_box_wrapper'>
+    <input id="lolid_name"style="width:30%;" type='text' placeholder="소환사 아이디를 입력하세요" />
+    <input id="bringdata_btn" type='button' value='검색' />
+  </div>
+
+
+
+  <script>
+    $(document).on('click', '#bringdata_btn', function () {
+
+      fetch('/getdata', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(
+          {
+            searchid: $('#lolid_name').val(),
+          }
+        )
+      }).then((res) => res.json()
+      ).then((data) => {
+        alert('결과는'+data.data+'입니다');
+        console.log(data.searchid);
+        console.log(data.data);
+
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>
