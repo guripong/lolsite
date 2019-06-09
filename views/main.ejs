@@ -8,9 +8,10 @@
 </head>
 
 <body>
-  <h1><%= title %></h1>
-  <p>Welcome to <%= title %></p>
-
+  <div style="text-align:center;">
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </div>
 
 
   <div class='lol_id_box_wrapper'>
@@ -18,7 +19,9 @@
     <input id="bringdata_btn" type='button' value='검색' />
   </div>
 
+  <div id='mytemp' style="text-align:center;">
 
+  </div>
 
   <script>
     $(document).on('click', '#bringdata_btn', function () {
@@ -36,9 +39,8 @@
         )
       }).then((res) => res.json()
       ).then((data) => {
-        alert('결과는'+data.data+'입니다');
-        console.log(data.searchid);
-        console.log(data.data);
+       // alert('결과는'+data.data+'입니다 \n' +'아이디:'+data.name+'\n레벨:'+data.level);
+        $('#mytemp').html('아이디:'+data.name+'\n레벨:'+data.level);
 
       });
     });
